@@ -5,8 +5,8 @@
 
 	<parent>
 		<groupId>se.kth</groupId>
-		<artifactId>spring-boot-camel-parent</artifactId>
-		<version>2.2.5.RELEASE</version>
+		<artifactId>integral-springbootcamel-parent</artifactId>
+		<version>2.2.5-0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
