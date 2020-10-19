@@ -1,0 +1,30 @@
+trigger: 
+  - master
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - checkout: self
+    clean: true
+
+  - task: MavenAuthenticate@0
+    inputs:
+      artifactsFeeds: 'integration'
+
+  - task: Maven@3
+    name: 'BuildPackage'
+    displayName: Build and deploy artifact
+    inputs:
+      mavenPomFile: 'pom.xml'
+      goals: 'clean package'
+      publishJUnitResults: true
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
+      jdkVersionOption: '1.11'
+      mavenVersionOption: 'Default'
+      mavenAuthenticateFeed: false
+      effectivePomSkip: false
+      findbugsAnalysisEnabled: true
+  
