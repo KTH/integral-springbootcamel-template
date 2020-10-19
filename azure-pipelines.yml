@@ -10,11 +10,13 @@ steps:
     clean: true
 
   - task: MavenAuthenticate@0
+    displayName: Authenticate to Azure Artifacts
     inputs:
       artifactsFeeds: 'integration'
+
   - task: Maven@3
     name: 'BuildPackage'
-    displayName: Build and deploy artifact
+    displayName: Build and test the project
     inputs:
       mavenPomFile: 'pom.xml'
       goals: 'clean package'
@@ -25,5 +27,3 @@ steps:
       mavenVersionOption: 'Default'
       mavenAuthenticateFeed: false
       effectivePomSkip: false
-      findbugsAnalysisEnabled: true
-  
