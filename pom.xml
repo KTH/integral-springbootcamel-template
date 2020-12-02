@@ -6,13 +6,13 @@
   <parent>
     <groupId>se.kth</groupId>
     <artifactId>integral-springbootcamel-parent</artifactId>
-    <version>3.5.0-1</version>
+    <version>3.5.0-8</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>se.kth</groupId>
   <artifactId>integral-springbootcamel-template</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <name>integral-springbootcamel-template</name>
   <description>Template to be used when creating new Spring Boot + Camel Projects</description>
 
@@ -59,10 +59,6 @@
   <build>
     <plugins>
       <plugin>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-maven-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>pl.project13.maven</groupId>
         <artifactId>git-commit-id-plugin</artifactId>
       </plugin>
@@ -93,7 +89,6 @@
         <artifactId>dockerconf-maven-plugin</artifactId>
       </plugin>
       -->
-
     </plugins>
   </build>
 
