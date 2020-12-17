@@ -6,13 +6,13 @@
   <parent>
     <groupId>se.kth</groupId>
     <artifactId>integral-springbootcamel-parent</artifactId>
-    <version>3.5.0-10</version>
+    <version>3.7.0-1</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>se.kth</groupId>
   <artifactId>integral-springbootcamel-template</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2</version>
   <name>integral-springbootcamel-template</name>
   <description>Template to be used when creating new Spring Boot + Camel Projects</description>
 
