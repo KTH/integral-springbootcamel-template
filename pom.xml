@@ -6,21 +6,31 @@
   <parent>
     <groupId>se.kth</groupId>
     <artifactId>integral-springbootcamel-parent</artifactId>
-    <version>3.7.0-1</version>
+    <version>3.7.0-2</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>se.kth</groupId>
   <artifactId>integral-springbootcamel-template</artifactId>
-  <version>1.0.2</version>
+  <version>1.0.3</version>
   <name>integral-springbootcamel-template</name>
   <description>Template to be used when creating new Spring Boot + Camel Projects</description>
 
   <dependencies>
+
+    <!-- Spring Boot and Camel minimal dependencies for your project -->
+    <dependency>
+      <groupId>org.apache.camel.springboot</groupId>
+      <artifactId>camel-spring-boot-starter</artifactId>
+    </dependency>
+
+    <!-- Use the new Camel Endpoint DSL (https://camel.apache.org/manual/latest/Endpoint-dsl.html) -->
     <dependency>
       <groupId>org.apache.camel</groupId>
       <artifactId>camel-endpointdsl</artifactId>
     </dependency>
+
+    <!-- Only for this example, use stdout in Camel -->
     <dependency>
       <groupId>org.apache.camel.springboot</groupId>
       <artifactId>camel-stream-starter</artifactId>
