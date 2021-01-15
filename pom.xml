@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <!-- Some useful maven commands
+    mvn versions:display-plugin-updates: Find newer versions of plugins
+    mvn versions:display-dependency-updates: Find newer versions of dependencies
+    mvn versions:set -DnewVersion=1.0.3: Set new version of parent and children
+    mvn help:effective-pom: Analyze how the final, effective POM looks like
+  -->
+
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
     <groupId>se.kth</groupId>
     <artifactId>integral-springbootcamel-parent</artifactId>
-    <version>3.7.0-2</version>
+    <version>3.7.0-3</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
@@ -78,10 +86,6 @@
         <artifactId>maven-enforcer-plugin</artifactId>
       </plugin>
       <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-dependency-plugin</artifactId>
-      </plugin>
-      <plugin>
         <groupId>com.github.spotbugs</groupId>
         <artifactId>spotbugs-maven-plugin</artifactId>
       </plugin>
@@ -103,6 +107,9 @@
     </plugins>
   </build>
 
+  <!-- This must be defined here, even though it is defined in the parent.
+       otherwise integral-springbootcamel-parent will not be found.
+       The properties in the parent cannot be used, they must be hardcoded. -->
   <repositories>
     <repository>
       <id>integration</id>

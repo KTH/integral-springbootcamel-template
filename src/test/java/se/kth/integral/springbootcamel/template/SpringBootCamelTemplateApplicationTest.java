@@ -16,16 +16,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @MockEndpointsAndSkip("timer:*")
 class SpringBootCamelTemplateApplicationTest {
 
-	@EndpointInject("mock:stream:out")
-	private MockEndpoint streamOut;
+  @Produce("mock:timer:template")
+  private ProducerTemplate timer;
 
-	@Produce("mock:timer:template")
-	protected ProducerTemplate timer;
+  @EndpointInject("mock:stream:out")
+  private MockEndpoint streamOut;
 
-	@Test
-	void outputIsHelloWorld() throws InterruptedException {
-		streamOut.expectedBodiesReceived("Hello World!");
-		timer.sendBody(null);
-		streamOut.assertIsSatisfied();
-	}
+  @Test
+  void outputIsHelloWorld() throws InterruptedException {
+    streamOut.expectedBodiesReceived("Hello World!");
+    timer.sendBody(null);
+    streamOut.assertIsSatisfied();
+  }
 }

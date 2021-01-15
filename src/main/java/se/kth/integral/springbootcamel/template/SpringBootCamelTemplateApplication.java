@@ -5,9 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringBootCamelTemplateApplication {
-
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootCamelTemplateApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(SpringBootCamelTemplateApplication.class, args);
+  }
 }
