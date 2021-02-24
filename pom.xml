@@ -13,15 +13,15 @@
 
   <parent>
     <groupId>se.kth</groupId>
-    <artifactId>integral-springbootcamel-parent</artifactId>
-    <version>3.7.0-3</version>
+    <artifactId>kth-parent</artifactId>
+    <version>3.7.2-2</version>
     <relativePath/> <!-- lookup parent from repository -->
   </parent>
 
   <groupId>se.kth</groupId>
-  <artifactId>integral-springbootcamel-template</artifactId>
-  <version>1.0.3</version>
-  <name>integral-springbootcamel-template</name>
+  <artifactId>kth-springbootcamel-template</artifactId>
+  <version>1.1.0</version>
+  <name>kth-springbootcamel-template</name>
   <description>Template to be used when creating new Spring Boot + Camel Projects</description>
 
   <dependencies>
@@ -38,7 +38,7 @@
       <artifactId>camel-endpointdsl</artifactId>
     </dependency>
 
-    <!-- Only for this example, use stdout in Camel -->
+    <!-- Only for this example, use of stdout in Camel -->
     <dependency>
       <groupId>org.apache.camel.springboot</groupId>
       <artifactId>camel-stream-starter</artifactId>
@@ -75,7 +75,7 @@
   </dependencies>
 
   <build>
-    <defaultGoal>clean package</defaultGoal>
+    <defaultGoal>clean verify</defaultGoal>
     <plugins>
       <plugin>
         <groupId>pl.project13.maven</groupId>
@@ -96,7 +96,10 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>xml-maven-plugin</artifactId>
       </plugin>
-
+      <plugin>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+      </plugin>
       <!-- Include if you deploy using Evolene -->
       <!--
       <plugin>
@@ -108,7 +111,7 @@
   </build>
 
   <!-- This must be defined here, even though it is defined in the parent.
-       otherwise integral-springbootcamel-parent will not be found.
+       otherwise kth-parent will not be found.
        The properties in the parent cannot be used, they must be hardcoded. -->
   <repositories>
     <repository>
